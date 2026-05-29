@@ -47,7 +47,27 @@ export default function TagBeats() {
   const [downloadSuccessId, setDownloadSuccessId] = useState<string | null>(null);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  if (!audioRef.current && typeof window !== "undefined") {
+    audioRef.current = new Audio();
+  }
   const progressInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Keep refs of key changing states to prevent re-installing event listeners on every state update
+  const isLoopingRef = useRef(isLooping);
+  const tracksRef = useRef(tracks);
+  const currentTrackIndexRef = useRef(currentTrackIndex);
+
+  useEffect(() => {
+    isLoopingRef.current = isLooping;
+  }, [isLooping]);
+
+  useEffect(() => {
+    tracksRef.current = tracks;
+  }, [tracks]);
+
+  useEffect(() => {
+    currentTrackIndexRef.current = currentTrackIndex;
+  }, [currentTrackIndex]);
 
   // Fetch music list dynamically from server
   useEffect(() => {
@@ -70,22 +90,34 @@ export default function TagBeats() {
     fetchMusic();
   }, []);
 
-  // Initialize and handle Audio Element
+  // 1. Initialize and handle Audio Element event listeners
   useEffect(() => {
-    audioRef.current = new Audio();
-    
     const audio = audioRef.current;
+    if (!audio) return;
 
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
     const onTimeUpdate = () => setCurrentTime(audio.currentTime);
-    const onLoadedMetadata = () => setDuration(audio.duration || 0);
+    const onLoadedMetadata = () => {
+      setDuration(audio.duration || 0);
+    };
+    
     const onEnded = () => {
-      if (isLooping) {
+      if (isLoopingRef.current) {
         audio.currentTime = 0;
-        audio.play().catch(() => {});
+        audio.play().catch((err) => {
+          console.warn("Looped audio play failed:", err);
+        });
       } else {
-        handleNextTrack();
+        const currentTracks = tracksRef.current;
+        const currentIdx = currentTrackIndexRef.current;
+        if (currentTracks.length > 1) {
+          const nextIdx = (currentIdx + 1) % currentTracks.length;
+          setCurrentTrackIndex(nextIdx);
+          setIsPlaying(true);
+        } else {
+          setIsPlaying(false);
+        }
       }
     };
 
@@ -103,66 +135,72 @@ export default function TagBeats() {
       audio.removeEventListener("loadedmetadata", onLoadedMetadata);
       audio.removeEventListener("ended", onEnded);
     };
-  }, [tracks, currentTrackIndex, isLooping]);
+  }, []);
 
-  // Handle Track Source URL change
+  // 2. Synchronize track source (URL) when track changes
   useEffect(() => {
-    if (audioRef.current && tracks.length > 0 && currentTrackIndex >= 0) {
-      const activeTrack = tracks[currentTrackIndex];
-      const selectedUrl = activeTrack.url;
-      const wasPlaying = isPlaying;
-      
-      audioRef.current.src = selectedUrl;
-      audioRef.current.load();
-      audioRef.current.volume = isMuted ? 0 : volume;
-      
-      if (wasPlaying) {
-        audioRef.current.play().catch(() => {
-          setIsPlaying(false);
-        });
-      } else {
-        setIsPlaying(false);
+    const audio = audioRef.current;
+    if (!audio || tracks.length === 0 || currentTrackIndex < 0) return;
+
+    const activeTrack = tracks[currentTrackIndex];
+    if (!activeTrack) return;
+
+    const targetUrl = activeTrack.url;
+    
+    // Check if the source is already mapped, decoding URI components for comparison consistency
+    const decodeSafe = (url: string) => {
+      try {
+        return decodeURIComponent(url);
+      } catch (e) {
+        return url;
       }
+    };
+
+    const currentSrc = audio.src;
+    const decodedCurrent = decodeSafe(currentSrc);
+    const decodedTarget = decodeSafe(targetUrl);
+
+    const isSame = decodedCurrent === decodedTarget || 
+                   decodedCurrent.endsWith(decodedTarget) || 
+                   (decodedTarget.startsWith("/") && decodedCurrent.endsWith(window.location.host + decodedTarget));
+    
+    if (!isSame) {
+      audio.src = targetUrl;
+      audio.load();
     }
   }, [currentTrackIndex, tracks]);
 
-  // Manage Volume Updates
+  // 3. Synchronize playing / paused state
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = isMuted ? 0 : volume;
+    const audio = audioRef.current;
+    if (!audio || tracks.length === 0) return;
+
+    if (isPlaying) {
+      audio.play().catch((err) => {
+        console.warn("Audio element play failed or was blocked by browser autoplay settings:", err);
+      });
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying, currentTrackIndex]);
+
+  // 4. Synchronize volume & mute
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.volume = isMuted ? 0 : volume;
     }
   }, [volume, isMuted]);
 
   const togglePlay = () => {
-    if (!audioRef.current || tracks.length === 0) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play().catch(err => {
-        console.warn("Audio file play failed, might be a placeholder binary text:", err);
-        // Toggle state even if browser blocks empty mp3 files so the UI feels responsive
-        setIsPlaying(true);
-        // Set a timer to simulate playing on dummy files
-        const interval = setInterval(() => {
-          if (!audioRef.current) {
-            clearInterval(interval);
-            return;
-          }
-          if (audioRef.current.paused) {
-            clearInterval(interval);
-          }
-        }, 1000);
-      });
-    }
+    if (tracks.length === 0) return;
+    setIsPlaying(!isPlaying);
   };
 
   const selectTrack = (index: number) => {
     if (index >= 0 && index < tracks.length) {
       setCurrentTrackIndex(index);
       setIsPlaying(true);
-      setTimeout(() => {
-        audioRef.current?.play().catch(() => {});
-      }, 50);
     }
   };
 
@@ -237,7 +275,7 @@ export default function TagBeats() {
       {/* Page Header */}
       <div className="max-w-3xl mb-12" id="tagbeats-header">
         <h1 className="font-display font-black text-white text-3xl sm:text-5xl tracking-tight leading-none mb-4">
-          Tagbilaran <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FFD54F] via-[#ff5722] to-[#FFD54F] italic pr-2">TagBeats</span>
+          Tagbilaran <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FFD54F] via-[#ff5722] to-[#FFD54F] italic pr-2 pb-3 pt-1 -mb-3 align-bottom">TagBeats</span>
         </h1>
         <p className="text-white text-sm sm:text-base leading-relaxed font-sans font-medium">
           Drown in the rich acoustic soul of the City of Peace and Friendship. Experience original local hymns, Saulog festivity anthems, and neoclassical suites composed by Tagbilaran's creative ensembles.

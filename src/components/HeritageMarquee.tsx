@@ -1,10 +1,10 @@
 import { Compass } from "lucide-react";
 
-const bcs = "/webp/Blood Compact Shrine (28).webp";
-const baliliOldHouse = "/webp/Balili Heritage House (4).webp";
-const bloodCompact21 = "/webp/Blood Compact Shrine (32).webp";
-const museum2 = "/webp/City Lights of Tagbilaran (1).webp";
-const oldHousePob1 = "/webp/Balili Heritage House (4).webp";
+const bcs = "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp";
+const baliliOldHouse = "/webp/Old%20House%20in%20Poblacion%201%20(3).webp";
+const bloodCompact21 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp";
+const museum2 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(1)%20(1).webp";
+const oldHousePob1 = "/webp/Old%20House%20in%20Poblacion%201%20(5).webp";
 
 interface MarqueeCardProps {
   id: string;
@@ -21,7 +21,7 @@ const row1Cards: MarqueeCardProps[] = [
     title: "Plaza Rizal",
     category: "Heritage Park",
     district: "Downtown",
-    image: "/webp/City Lights of Tagbilaran (1).webp",
+    image: "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp",
     desc: "A soothing public square in the heart of downtown, serving as a sanctuary for city birds."
   },
   {
@@ -29,7 +29,7 @@ const row1Cards: MarqueeCardProps[] = [
     title: "NM Bohol Area Museum",
     category: "Museum",
     district: "Old Capitol",
-    image: "/webp/City Lights of Tagbilaran (11).webp",
+    image: "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp",
     desc: "A spectacular 1860 stone-and-lime tribunal showcasing deep native prehistoric history."
   },
   {
@@ -37,7 +37,7 @@ const row1Cards: MarqueeCardProps[] = [
     title: "Cathedral of St. Joseph the Worker",
     category: "Spanish Church",
     district: "Poblacion",
-    image: "/webp/Blood Compact Shrine (2).webp",
+    image: "/webp/Old%20House%20in%20Poblacion%201%20(5).webp",
     desc: "Centuries-old limestone cathedral decorated with breathtaking local ceiling frescoes."
   },
   {
@@ -45,7 +45,7 @@ const row1Cards: MarqueeCardProps[] = [
     title: "Garden Café",
     category: "Cultural Café",
     district: "Poblacion",
-    image: "/webp/City Lights of Tagbilaran (11).webp",
+    image: "/webp/Poblacion%201,%20Tagbilaran%20City%20(1)%20(1).webp",
     desc: "A social enterprise serving great food and supporting the deaf community since development."
   },
   {
@@ -53,7 +53,7 @@ const row1Cards: MarqueeCardProps[] = [
     title: "Reyes House",
     category: "Ancestral House",
     district: "Poblacion",
-    image: "/webp/Balili Heritage House (4).webp",
+    image: "/webp/Old%20House%20in%20Poblacion%201%20(3).webp",
     desc: "A mute revolutionary witness to the 1900 secrets of anti-colonial resistance fighters."
   },
   {
@@ -61,7 +61,7 @@ const row1Cards: MarqueeCardProps[] = [
     title: "Friendship Park",
     category: "Monument",
     district: "Barangay Bool",
-    image: "/webp/Blood Compact Shrine (28).webp",
+    image: "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp",
     desc: "Napoleon Abueva's supreme Sandugo bronze composition marking international diplomacy."
   },
   {
@@ -69,7 +69,7 @@ const row1Cards: MarqueeCardProps[] = [
     title: "CPG Heritage House",
     category: "President's Home",
     district: "Poblacion",
-    image: "/webp/Balili Heritage House (4).webp",
+    image: "/webp/Old%20House%20in%20Poblacion%201%20(7).webp",
     desc: "The personal estate of President Carlos P. Garcia housing historic chessboards."
   }
 ];
@@ -80,7 +80,7 @@ const row2Cards: MarqueeCardProps[] = [
     title: "Balili House / Oasis Lodge",
     category: "Heritage Lodge",
     district: "Poblacion",
-    image: "/webp/Balili Heritage House (4).webp",
+    image: "/webp/Old%20House%20in%20Poblacion%201%20(3).webp",
     desc: "A majestic 1930s chalet masterfully preserved through adaptive civic accommodation."
   },
   {
@@ -88,7 +88,7 @@ const row2Cards: MarqueeCardProps[] = [
     title: "Capt. Salazar Monument",
     category: "WWII Memorial",
     district: "Barangay Ubujan",
-    image: "/webp/Capt. Salazar Monument (1).webp",
+    image: "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp",
     desc: "Bas-relief tribute honoring the bravery of Salazar and 200 volunteer guerilla warriors."
   },
   {
@@ -112,7 +112,7 @@ const row2Cards: MarqueeCardProps[] = [
     title: "Beldia House",
     category: "Historic House",
     district: "Sitio Ubos",
-    image: "/webp/Balili Heritage House (4).webp",
+    image: "/webp/Old%20House%20in%20Poblacion%201%20(3).webp",
     desc: "Pre-war residential architecture representing unique wood-and-stone style."
   },
   {

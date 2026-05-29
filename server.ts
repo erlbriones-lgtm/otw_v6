@@ -136,6 +136,10 @@ app.get("/api/music-files", (req, res) => {
         return ext === ".mp3" || ext === ".wav" || ext === ".m4a" || ext === ".ogg";
       })
       .map((file, idx) => {
+        const filePath = path.join(musicDir, file);
+        const stats = fs.statSync(filePath);
+        const sizeMb = (stats.size / (1024 * 1024)).toFixed(2) + " MB";
+
         const nameWithoutExt = path.basename(file, path.extname(file));
         const friendlyTitle = nameWithoutExt
           .replace(/[-_()]/g, " ")
@@ -146,6 +150,8 @@ app.get("/api/music-files", (req, res) => {
         let defaultDuration = "2:15";
         let defaultMood = "Official Trailer";
 
+        console.log(`[Music Scanner] Found track: ${file}, Size: ${stats.size} bytes (${sizeMb})`);
+
         return {
           id: `music-track-${idx + 1}`,
           title: friendlyTitle,
@@ -154,7 +160,7 @@ app.get("/api/music-files", (req, res) => {
           artist: "Tagbilaran Cultural Ensembles",
           duration: defaultDuration,
           category: defaultMood,
-          fileSize: ""
+          fileSize: sizeMb
         };
       });
 
@@ -203,24 +209,45 @@ app.get("/api/download", (req, res) => {
 
 // Serve static assets or set up Vite middleware
 async function start() {
-  // Always statically serve the webp directory at root level and /webp in addition to Vite/dist
+  // Always statically serve the webp directories at root level and /webp in addition to Vite/dist
   // Force correct MIME type for webp images to ensure all browsers render them perfectly
-  const webpStatic = express.static(path.join(process.cwd(), "src", "data", "webp"), {
-    setHeaders: (res, filePath) => {
-      const lowerPath = filePath.toLowerCase();
-      if (lowerPath.endsWith(".webp")) {
-        res.setHeader("Content-Type", "image/webp");
-      } else if (lowerPath.endsWith(".jpg") || lowerPath.endsWith(".jpeg")) {
-        res.setHeader("Content-Type", "image/jpeg");
-      }
+  const setWebpHeaders = (res: any, filePath: string) => {
+    const lowerPath = filePath.toLowerCase();
+    if (lowerPath.endsWith(".webp")) {
+      res.setHeader("Content-Type", "image/webp");
+    } else if (lowerPath.endsWith(".jpg") || lowerPath.endsWith(".jpeg")) {
+      res.setHeader("Content-Type", "image/jpeg");
     }
+  };
+
+  const webpStaticPublic = express.static(path.join(process.cwd(), "public", "webp"), {
+    setHeaders: setWebpHeaders
   });
 
-  app.use("/webp", webpStatic);
-  app.use(webpStatic);
+  const webpStaticSrc = express.static(path.join(process.cwd(), "src", "data", "webp"), {
+    setHeaders: setWebpHeaders
+  });
+
+  const webpStaticDownloadables = express.static(path.join(process.cwd(), "Downloadables", "webp"), {
+    setHeaders: setWebpHeaders
+  });
+
+  const webpStaticTemp = express.static(path.join(process.cwd(), "temp"), {
+    setHeaders: setWebpHeaders
+  });
+
+  // Serve from public webp first (as we consolidated there), fallback to Downloadables, src, or temp
+  app.use("/webp", webpStaticPublic);
+  app.use("/webp", webpStaticDownloadables);
+  app.use("/webp", webpStaticSrc);
+  app.use("/webp", webpStaticTemp);
+  app.use(webpStaticPublic);
+  app.use(webpStaticDownloadables);
+  app.use(webpStaticSrc);
+  app.use(webpStaticTemp);
 
   // Serve downloadables statically with proper attachment and MIME headers
-  app.use("/downloadables", express.static(path.join(process.cwd(), "downloadables"), {
+  app.use("/downloadables", express.static(path.join(process.cwd(), "Downloadables"), {
     setHeaders: (res, filePath) => {
       const lowerPath = filePath.toLowerCase();
       if (lowerPath.endsWith(".xlsx")) {

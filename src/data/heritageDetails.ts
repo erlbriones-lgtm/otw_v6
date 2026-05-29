@@ -1,26 +1,26 @@
-const bcs1 = "/webp/Blood Compact Shrine (28).webp";
-const bcs2 = "/webp/Blood Compact Shrine (32).webp";
-const bcs3 = "/webp/Blood Compact Shrine (28).webp";
-const bcs4 = "/webp/Blood Compact Shrine (32).webp";
-const bcs5 = "/webp/Blood Compact Shrine (28).webp";
-const bcs6 = "/webp/Blood Compact Shrine (32).webp";
+const bcs1 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp";
+const bcs2 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(1)%20(1).webp";
+const bcs3 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp";
+const bcs4 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp";
+const bcs5 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(1)%20(1).webp";
+const bcs6 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp";
 
-const blades1 = "/webp/Bohol Blades (1).webp";
-const blades2 = "/webp/Bohol Blades (1).webp";
+const blades1 = "/webp/Old%20House%20in%20Poblacion%201%20(3).webp";
+const blades2 = "/webp/Old%20House%20in%20Poblacion%201%20(3).webp";
 
-const museum1 = "/webp/City Lights of Tagbilaran (11).webp";
-const museum2 = "/webp/Balili Heritage House (4).webp";
+const museum1 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp";
+const museum2 = "/webp/Old%20House%20in%20Poblacion%201%20(7).webp";
 
-const cathedral1 = "/webp/Blood Compact Shrine (2).webp";
-const cathedral2 = "/webp/City Lights of Tagbilaran (11).webp";
+const cathedral1 = "/webp/Old%20House%20in%20Poblacion%201%20(5).webp";
+const cathedral2 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp";
 
-const house1 = "/webp/Blood Compact Shrine (2).webp";
-const house2 = "/webp/Balili Heritage House (4).webp";
-const house3 = "/webp/Balili Heritage House (4).webp";
+const house1 = "/webp/Old%20House%20in%20Poblacion%201%20(3).webp";
+const house2 = "/webp/Old%20House%20in%20Poblacion%201%20(5).webp";
+const house3 = "/webp/Old%20House%20in%20Poblacion%201%20(7).webp";
 
-const spring1 = "/webp/City Lights of Tagbilaran (1).webp";
-const spring2 = "/webp/City Lights of Tagbilaran (11).webp";
-const spring3 = "/webp/Blood Compact Shrine (31).webp";
+const spring1 = "/webp/Tubig%20Dako%20in%20Taloto%20(1).webp";
+const spring2 = "/webp/Taloto%20to%20Manga%20Coastline%20(1).webp";
+const spring3 = "/webp/Taloto%20to%20Manga%20Coastline%20(6).webp";
 
 export interface DetailedHeritage {
   id: string;
@@ -47,8 +47,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "Heritage Park",
     district: "Downtown Landmark",
     tagline: "Get a breath of fresh air and a soothing respite at the heart of downtown Tagbilaran.",
-    mainImage: "/webp/City Lights of Tagbilaran (1).webp",
-    images: ["/webp/City Lights of Tagbilaran (1).webp", "/webp/City Lights of Tagbilaran (11).webp"],
+    mainImage: "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp",
+    images: ["/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp", "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp"],
     description: "The tour starts at the Plaza Rizal. Get a breath of fresh air and a soothing respite at the heart of downtown Tagbilaran. Plaza Rizal has become a hub for children, residents and tourists alike who delight at the sight of pigeons and the buzzing sound of a thousand city birds who find sanctuary in the green park.",
     longHistory: "Establishment of Plaza Rizal dated back to the Spanish colonial era as the central plaza in front of the St. Joseph Cathedral. Over decades, it has evolved from a historic meeting ground to a lively community park. Plaza Rizal features manicured gardens, safe concrete pathways, and historical markers, all under the shade of century-old acacia trees. It's renowned as a natural bird sanctuary in the middle of a bustling urban center.",
     yearEstablished: "Spanish Era",
@@ -77,8 +77,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "Museum",
     district: "Spanish Era",
     tagline: "Discover Bohol from prehistoric times to the present in a majestic stone-and-lime landmark.",
-    mainImage: "/webp/Poblacion 1, Tagbilaran City (2).webp",
-    images: ["/webp/Poblacion 1, Tagbilaran City (2).webp", "/webp/Old House in Poblacion 1 (3).webp"],
+    mainImage: "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp",
+    images: ["/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp", "/webp/Old%20House%20in%20Poblacion%201%20(3).webp"],
     description: "Discover Bohol from prehistoric times to the present at the NM Bohol Area Museum housed in the old Bohol Provincial Capitol. This building was constructed in 1860 to serve as tribunal and military quarters for the Spanish military force. The structure was built in the traditional Spanish construction of stone and lime.",
     longHistory: "Built original as a 'Casa Real' and tribunal, the old Bohol Provincial Capitol was crafted from quarried stone and lime under the guidance of Spanish engineers. After serving generations of provincial leadership, the property was turned over to the National Museum of the Philippines. Extensive restoration revived its high interior columns, arched hallways, and classic stone-clad ground level, keeping pre-colonial artifacts and heritage treasures safe.",
     yearEstablished: "1860 (Capitol) / 2018 (Museum)",
@@ -107,8 +107,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "Church",
     district: "Spanish Architecture",
     tagline: "A centuries-old spiritual beacon of Boholanos detailing magnificent ceiling works.",
-    mainImage: "/webp/Old House in Poblacion 1 (5).webp",
-    images: ["/webp/Old House in Poblacion 1 (5).webp", "/webp/Poblacion 1, Tagbilaran City (2).webp"],
+    mainImage: "/webp/Old%20House%20in%20Poblacion%201%20(5).webp",
+    images: ["/webp/Old%20House%20in%20Poblacion%201%20(5).webp", "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp"],
     description: "Opposite the NM Bohol Area Museum is the centuries-old church where one can manifest religion as an integral part of the culture of Tagbilaranos and admire the spectacular Spanish architecture. It is one of the six parishes founded in Bohol by the Jesuit missionaries in 1595 and was turned over by the recollects in 1768. The original church built by the Jesuits on this spot was burned in 1798. It was then reconstructed and enlarged around 1839-1855. It had undergone renovations and restorations over the years and the recent additions are the paintings of local artists on the church ceilings and walls.",
     longHistory: "Following the destruction of the initial Jesuit-built structure during a devastating fire in 1798, recursive efforts by Augustinian Recollect builders saw its restoration between 1839 and 1855, employing durable coral limestone blocks. Over successive years, the cathedral evolved continuously, integrating beautiful modern paintwork on its expansive ceiling. These murals were crafted meticulously by local master artists, visually presenting Biblical scenarios and historical religious chronicles.",
     yearEstablished: "1595 (Founded) / 1839-1855 (Rebuilt)",
@@ -137,8 +137,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "Cultural Café",
     district: "Spanish Era",
     tagline: "A unique restaurant serving excellent food and supporting the local deaf community.",
-    mainImage: "/webp/Poblacion 1, Tagbilaran City (2).webp",
-    images: ["/webp/Poblacion 1, Tagbilaran City (2).webp", "/webp/Old House in Poblacion 1 (3).webp"],
+    mainImage: "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp",
+    images: ["/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp", "/webp/Old%20House%20in%20Poblacion%201%20(3).webp"],
     description: "Seize the chance to take that Instagram-worthy selfie with Garden Café's latest feature, the tarantilla (a horse-drawn covered wagon) which served as the main mode of transportation in Tagbilaran during the Spanish Era in the 1800s. Munch on one of the best-selling items on their menu while you enjoy a unique dining experience being served by hearing-impaired/deaf staff. You may learn a few sign language as the menu includes hand signals to aid customers.",
     longHistory: "Founded as a civic social enterprise, the Garden Café not only offers a wonderful, ambient garden dining space but also integrates inclusive work practices. It provides meaningful employment to highly capable hearing-impaired and deaf youth from Tagbilaran. The eatery showcases vintage local artifacts, and is centered around an authentic, beautifully reconstructed 'tarantilla' wagon from the Spanish colonial century, offering customers both physical history and heartwarming social impact.",
     yearEstablished: "Modern Cultural Landmark",
@@ -167,8 +167,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "Ancestral House",
     district: "Revolution History",
     tagline: "A silent witness to the secret strategies of Boholano revolutionary leaders in 1900.",
-    mainImage: "/webp/Old House in Poblacion 1 (3).webp",
-    images: ["/webp/Old House in Poblacion 1 (3).webp", "/webp/Old House in Poblacion 1 (5).webp"],
+    mainImage: "/webp/Old%20House%20in%20Poblacion%201%20(3).webp",
+    images: ["/webp/Old%20House%20in%20Poblacion%201%20(3).webp", "/webp/Old%20House%20in%20Poblacion%201%20(5).webp"],
     description: "This magnificent abode has been a mute witness to the secret meetings for a resistance against the American colonizers in 1900. While the women were staging a nightly novena in honor of San Roque, the second patron saint of Tagbilaran, the men were plotting their uprising against the Americans in one of the upper rooms. The Boholanos eventually succumbed to American power with their inevitable surrender in December 1901.",
     longHistory: "During the Philippine-American War in 1900, the Reyes House became the clandestine headquarters of the Boholano local resistance movement. To deflect the attention of roving soldiers, the brave women of the household gathered downstairs to conduct vocal novena prayers dedicated to San Roque. Meanwhile, in the upper wooden salon, the local revolutionary leaders finalized strategic combat plans to push back the American army.",
     yearEstablished: "Late 19th Century",
@@ -197,8 +197,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "Monument",
     district: "Historical Treaty",
     tagline: "Home of Napoleon Abueva's supreme sculptural masterpiece honoring national friendship.",
-    mainImage: "/webp/Blood Compact Shrine (28).webp",
-    images: ["/webp/Blood Compact Shrine (28).webp", "/webp/Blood Compact Shrine (2).webp", "/webp/Blood Compact Shrine (31).webp"],
+    mainImage: "/webp/Blood%20Compact%20Shrine%20(28).webp",
+    images: ["/webp/Blood%20Compact%20Shrine%20(28).webp", "/webp/Blood%20Compact%20Shrine%20(2).webp", "/webp/Blood%20Compact%20Shrine%20(31).webp"],
     description: "Be in awe with the sculptural masterpiece of the revered Father of Modern Philippine Sculpture, Boholano National Artist Napoleon Abueva. It depicts the 1st international treaty of friendship between local Chieftain Datu Sikatuna and Spanish Captain Miguel Lopez de Legazpi in 1565. The monument welcomes you to the flourishing Bohol Friendship Park.",
     longHistory: "The Bohol Friendship Park centrates on the immortal bronze sculpture crafted by the 'Father of Modern Philippine Sculpture', Napoleon Abueva. It marks the blood-compact pact ('Sandugo') sworn on March 16, 1565, by Datu Sikatuna, Chieftain of Bohol, and Miguel Lopez de Legazpi, General of the Spanish expedition. The dramatic life-sized composition shows the figures drinking the blood-infused wine cup, signifying a historic first in formal international diplomacy in the region.",
     yearEstablished: "1565 (Pact) / 1997 (Sculpture Group)",
@@ -227,8 +227,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "Presidential Heritage",
     district: "Museum",
     tagline: "Explore the intimate home, personal items, and chessboards of President Carlos P. Garcia.",
-    mainImage: "/webp/Balili Heritage House (4).webp",
-    images: ["/webp/Balili Heritage House (4).webp", "/webp/Old House in Poblacion 1 (3).webp"],
+    mainImage: "/webp/Balili%20Heritage%20House%20(4).webp",
+    images: ["/webp/Balili%20Heritage%20House%20(4).webp", "/webp/Old%20House%20in%20Poblacion%201%20(3).webp"],
     description: "Traverse the home of former Philippine President Carlos P. Garcia (CPG). It houses a treasure trove of personal memorabilia of the late president, who was also a renowned poet, orator, lawyer, teacher, chess player, public official, and guerrilla leader. It also features carved chessboards evident of the late president's ardent interest in the game.",
     longHistory: "The CPG Heritage House is the personal estate of the 8th President of the Philippines, Carlos P. Garcia. Serving as a physical museum, the two-story residence exhibits his presidential desk, historic correspondences, traditional clothing, and personal library. Known for his keen intellect and championship chess matches, the mansion displays his custom hand-carved chessboards, representing a deep view into the lifestyle of this brilliant Boholano statesman.",
     yearEstablished: "Mid-20th Century",
@@ -257,8 +257,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "Heritage Lodge",
     district: "Chalet",
     tagline: "A majestic 1930s chalet masterfully preserved through adaptive civic re-use.",
-    mainImage: "/webp/Old House in Poblacion 1 (7).webp",
-    images: ["/webp/Old House in Poblacion 1 (7).webp", "/webp/Balili Heritage House (4).webp"],
+    mainImage: "/webp/Old%20House%20in%20Poblacion%201%20(7).webp",
+    images: ["/webp/Old%20House%20in%20Poblacion%201%20(7).webp", "/webp/Balili%20Heritage%20House%20(4).webp"],
     description: "Built by Mr. Eladio Balili, this majestic 1930s chalet is now open for travelers and families as it becomes a lodge, the best example of adaptive re-use of a heritage structure.",
     longHistory: "Erected in the decade of the 1930s by Mr. Eladio Balili, this architectural gem features a high-gabled chalet form with American-colonial-era layout guidelines. To guarantee its structural preservation across modern decades, the mansion underwent a successful transformation into a boutique heritage lodge. This adaptive re-use model allows guests to actively sleep inside living history, keeping local craftsmanship alive.",
     yearEstablished: "1930s",
@@ -287,8 +287,8 @@ export const detailedHeritageList: DetailedHeritage[] = [
     category: "World War II",
     district: "Monument",
     tagline: "The bas-relief shrine honoring the heroism of the 'Behind the Clouds' resistance volunteers.",
-    mainImage: "/webp/Capt. Salazar Monument (1).webp",
-    images: ["/webp/Capt. Salazar Monument (1).webp", "/webp/Poblacion 1, Tagbilaran City (1).webp"],
+    mainImage: "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp",
+    images: ["/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp", "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp"],
     description: "Engage in an unforgettable experience with a visit to a World War II historical site in Barangay Ubujan, recently restored and enhanced under the City Government. The bas-relief artwork depicts the heroism of local patriots who paid the ultimate price for the freedom and sovereignty of the Filipino people against the Japanese Imperial Army on October 22, 1942. Under the leadership of Capt. Francisco Salazar, Combat Head of the \"Behind the Clouds\" Bohol Guerilla Movement, some 200 volunteers were engaged in one of the bloodiest ambuscades in Bohol against the much superior Japanese Imperial Army.",
     longHistory: "On October 22, 1942, a small but fiercely determined group of Boholano guerrilla fighters, numbering around 200 volunteers under the courageous leadership of Capt. Francisco Salazar, staged a brave ambush against a significantly larger, better-equipped Japanese force in Barangay Ubujan. Operating as the Combat Head of the 'Behind the Clouds' Bohol Guerrilla Movement, Salazar and his troops fought valiantly to defend their homeland. The site features a meticulously detailed bas-relief monument, recently restored by the City Government to honor their supreme historical sacrifice.",
     yearEstablished: "1942 (Event) / Recently Enhanced Shrine",

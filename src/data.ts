@@ -1,7 +1,7 @@
 import { Landmark, Barangay } from "./types";
-const slide1 = "/webp/Blood Compact Shrine (28).webp";
-const slide2 = "/webp/City Lights of Tagbilaran (1).webp";
-const slide4 = "/webp/Balili Heritage House (4).webp";
+const slide1 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp";
+const slide2 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp";
+const slide4 = "/webp/Old%20House%20in%20Poblacion%201%20(3).webp";
 
 export const tagbilaranLandmarks: Landmark[] = [
   {
@@ -12,7 +12,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Downtown, Tagbilaran City",
     yearEstablished: "Spanish Era",
     highlight: "Park Sanctuary & Bird Hub",
-    imageUrl: "/webp/City Lights of Tagbilaran (1).webp"
+    imageUrl: "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp"
   },
   {
     id: "nm-bohol-area-museum-historic",
@@ -22,7 +22,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Old Provincial Capitol, Tagbilaran City",
     yearEstablished: "1860",
     highlight: "Prehistoric Artifacts & Colonial Architecture",
-    imageUrl: "/webp/City Lights of Tagbilaran (11).webp"
+    imageUrl: "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp"
   },
   {
     id: "cathedral-st-joseph-worker-historic",
@@ -32,7 +32,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Poblacion, Tagbilaran City",
     yearEstablished: "1595 (Parish) / 1839 (Rebuilt)",
     highlight: "Majestic Spanish Architecture & Ceiling Paintings",
-    imageUrl: "/webp/Blood Compact Shrine (2).webp"
+    imageUrl: "/webp/Old%20House%20in%20Poblacion%201%20(5).webp"
   },
   {
     id: "garden-cafe",
@@ -42,7 +42,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Poblacion, Tagbilaran City",
     yearEstablished: "Modern Cultural Landmark",
     highlight: "Tarantilla Wagon & Deaf Sign Language Service",
-    imageUrl: "/webp/City Lights of Tagbilaran (11).webp"
+    imageUrl: "/webp/Poblacion%201,%20Tagbilaran%20City%20(1)%20(1).webp"
   },
   {
     id: "reyes-house",
@@ -52,7 +52,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Poblacion, Tagbilaran City",
     yearEstablished: "Late 19th Century",
     highlight: "Upper-Room Secret Revolutionary Meetings site",
-    imageUrl: "/webp/Balili Heritage House (4).webp"
+    imageUrl: "/webp/Old%20House%20in%20Poblacion%201%20(3).webp"
   },
   {
     id: "friendship-park-abueva",
@@ -62,7 +62,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Barangay Bool, Tagbilaran City",
     yearEstablished: "1565 (Pact) / 1997",
     highlight: "Napoleon Abueva Bronze Masterpiece",
-    imageUrl: "/webp/Blood Compact Shrine (28).webp"
+    imageUrl: "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp"
   },
   {
     id: "cpg-heritage-house",
@@ -72,7 +72,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Poblacion, Tagbilaran City",
     yearEstablished: "Mid-20th Century",
     highlight: "Carlos P. Garcia Memorabilia & Chessboards",
-    imageUrl: "/webp/Balili Heritage House (4).webp"
+    imageUrl: "/webp/Old%20House%20in%20Poblacion%201%20(7).webp"
   },
   {
     id: "balili-house-oasis-lodge",
@@ -82,7 +82,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Poblacion, Tagbilaran City",
     yearEstablished: "1930s",
     highlight: "Adaptive Reuse Heritage Chalet Lodge",
-    imageUrl: "/webp/Balili Heritage House (4).webp"
+    imageUrl: "/webp/Old%20House%20in%20Poblacion%201%20(3).webp"
   },
   {
     id: "capt-francisco-salazar-monument",
@@ -92,7 +92,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Barangay Ubujan, Tagbilaran City",
     yearEstablished: "1942 (Event) / Recently Restored",
     highlight: "Behind the Clouds Guerrilla Movement Memorial",
-    imageUrl: "/webp/Capt. Salazar Monument (1).webp"
+    imageUrl: "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp"
   },
   {
     id: "casa-rocha",
@@ -102,7 +102,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Sitio Ubos, Tagbilaran City",
     yearEstablished: "Spanish Colonial Era",
     highlight: "Coral Stone Walls & Hardwood Interiors",
-    imageUrl: "/webp/Blood Compact Shrine (2).webp"
+    imageUrl: "/webp/Old%20House%20in%20Poblacion%201%20(7).webp"
   },
   {
     id: "rocha-suarez-house",
@@ -112,7 +112,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Sitio Ubos, Tagbilaran City",
     yearEstablished: "Spanish Colonial Era",
     highlight: "Traditional Wood-and-Stone Architecture",
-    imageUrl: "/webp/Balili Heritage House (4).webp"
+    imageUrl: "/webp/Old%20House%20in%20Poblacion%201%20(5).webp"
   },
   {
     id: "beldia-house",
@@ -122,7 +122,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Sitio Ubos, Tagbilaran City",
     yearEstablished: "Pre-War Era",
     highlight: "Pre-War Wood-and-Stone Construction",
-    imageUrl: "/webp/Balili Heritage House (4).webp"
+    imageUrl: "/webp/Old%20House%20in%20Poblacion%201%20(3).webp"
   },
   {
     id: "dalareich-chocolate-house",
@@ -132,7 +132,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Poblacion District, Tagbilaran City",
     yearEstablished: "Cultural Revival Site",
     highlight: "Bohol Cacao Farming & Tablea Crafts",
-    imageUrl: "/webp/City Lights of Tagbilaran (11).webp"
+    imageUrl: "/webp/Timapay%20Crisp%20(3).webp"
   },
   {
     id: "cultural-show",
@@ -142,7 +142,7 @@ export const tagbilaranLandmarks: Landmark[] = [
     location: "Cultural Stage, Tagbilaran City",
     yearEstablished: "Ongoing Tradition",
     highlight: "Traditional Visayan Courtship Dances & Music",
-    imageUrl: "/webp/Blood Compact Shrine (28).webp"
+    imageUrl: "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp"
   }
 ];
 

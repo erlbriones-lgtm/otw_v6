@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowDown, Flame, Sparkles, MapPin, Compass } from "lucide-react";
 
-const slide1 = "/webp/Blood%20Compact%20Shrine%20(28).webp";
-const slide2 = "/webp/City%20Lights%20of%20Tagbilaran%20(1).webp";
-const slide3 = "/webp/Blood%20Compact%20Shrine%20(32).webp";
-const slide4 = "/webp/Balili%20Heritage%20House%20(4).webp";
-const slide5 = "/webp/City%20Lights%20of%20Tagbilaran%20(11).webp";
+const slide1 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(1).webp";
+const slide2 = "/webp/Taloto%20to%20Manga%20Coastline%20(1).webp";
+const slide3 = "/webp/Poblacion%201,%20Tagbilaran%20City%20(2).webp";
+const slide4 = "/webp/Taloto%20to%20Manga%20Coastline%20(6).webp";
+const slide5 = "/webp/Old%20House%20in%20Poblacion%201%20(3).webp";
 
 interface HeroProps {
   onSwitchToHeritage: () => void;
@@ -42,14 +42,14 @@ export default function Hero({ onSwitchToHeritage, onPlanVisit, weatherDescripti
       {/* Immersive background slideshow displaying images slowly and sequentially */}
       <div 
         id="hero-background-media" 
-        className="absolute inset-0 z-0 select-none overflow-hidden bg-[#19053a]"
+        className="absolute inset-0 z-0 select-none overflow-hidden bg-[#461c8a]"
       >
         {/* Subtle dark overlay for readability as requested */}
-        <div className="absolute inset-0 bg-black/50 z-20" />
+        <div className="absolute inset-0 bg-black/35 z-20" />
 
         {/* Top and Bottom soft fading gradients matching parent theme */}
-        <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#19053a] via-[#19053a]/60 to-transparent z-20 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#1b0a42] via-[#1b0a42]/60 to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#461c8a] via-[#461c8a]/60 to-transparent z-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-[#461c8a] via-[#461c8a]/50 to-transparent z-20 pointer-events-none" />
         
         {/* Preloaded and cross-faded slides utilizing transition-opacity for max reliability */}
         {SLIDE_IMAGES.map((imgUrl, idx) => (
@@ -93,15 +93,15 @@ export default function Hero({ onSwitchToHeritage, onPlanVisit, weatherDescripti
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="font-display text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.1] mb-6 block custom-heading"
+          className="font-display text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.1] mb-6 block"
           id="hero-main-headline"
-          style={{ textShadow: "0px 2px 8px rgba(0,0,0,0.7)" }}
         >
-          Tagbilaran: <span className="text-white">Where</span>
-          <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FFD54F] via-[#ffaa00] to-[#FFD54F] italic mt-1 pb-1 pr-4">
+          <span style={{ textShadow: "0px 2px 8px rgba(0,0,0,0.7)" }}>Tagbilaran: </span>
+          <span className="text-white" style={{ textShadow: "0px 2px 8px rgba(0,0,0,0.7)" }}>Where</span>
+          <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FFD54F] via-[#ff5722] to-[#FFD54F] italic mt-1 pb-1 pr-4">
             Heritage Meets
           </span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FFD54F] to-[#ffaa00] mt-1 pr-1 font-extrabold">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FFD54F] via-[#ff5722] to-[#FFD54F] mt-1 pr-1 font-extrabold">
             Tomorrow
           </span>
         </motion.h1>
