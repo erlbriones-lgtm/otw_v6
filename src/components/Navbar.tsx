@@ -11,6 +11,7 @@ interface NavbarProps {
 
 export default function Navbar({ activeView, setActiveView, onPlanVisit }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [logoFailed, setLogoFailed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,12 +49,19 @@ export default function Navbar({ activeView, setActiveView, onPlanVisit }: Navba
           className="flex items-center gap-2.5 cursor-pointer group select-none md:absolute md:left-6 lg:left-12"
           id="nav-logo"
         >
-          <img 
-            src={logoUrl} 
-            alt="Tagbilaran Official Seal" 
-            className="w-8 h-8 object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105" 
-            referrerPolicy="no-referrer"
-          />
+          {!logoFailed ? (
+            <img 
+              src={logoUrl} 
+              alt="Tagbilaran Official Seal" 
+              onError={() => setLogoFailed(true)}
+              className="w-8 h-8 object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105" 
+              referrerPolicy="no-referrer"
+            />
+          ) : (
+            <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center border border-white/25 text-[#FFD54F] group-hover:scale-105 transition-transform duration-300 shadow-sm">
+              <Compass className="w-4 h-4 animate-[spin_10s_linear_infinite]" />
+            </div>
+          )}
           <span className="font-sans font-extrabold tracking-wide text-sm sm:text-base transition-colors leading-none text-white drop-shadow-md">
             Tagbilaran City
           </span>

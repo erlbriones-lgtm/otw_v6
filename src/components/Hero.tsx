@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowDown, Flame, Sparkles, MapPin, Compass } from "lucide-react";
 
-const slide1 = "/webp/Blood Compact Shrine (28).webp";
-const slide2 = "/webp/City Lights of Tagbilaran (1).webp";
-const slide3 = "/webp/Blood Compact Shrine (32).webp";
-const slide4 = "/webp/Balili Heritage House (4).webp";
-const slide5 = "/webp/City Lights of Tagbilaran (11).webp";
+const slide1 = "/webp/Blood%20Compact%20Shrine%20(28).webp";
+const slide2 = "/webp/City%20Lights%20of%20Tagbilaran%20(1).webp";
+const slide3 = "/webp/Blood%20Compact%20Shrine%20(32).webp";
+const slide4 = "/webp/Balili%20Heritage%20House%20(4).webp";
+const slide5 = "/webp/City%20Lights%20of%20Tagbilaran%20(11).webp";
 
 interface HeroProps {
   onSwitchToHeritage: () => void;
@@ -39,30 +39,33 @@ export default function Hero({ onSwitchToHeritage, onPlanVisit, weatherDescripti
       id="gateway-hero"
       className="relative min-h-screen flex items-center justify-start overflow-hidden bg-transparent px-8 sm:px-16 md:px-24 pt-24 pb-16"
     >
-      {/* Immersive background slideshow displaying Timages slowly and randomly */}
+      {/* Immersive background slideshow displaying images slowly and sequentially */}
       <div 
         id="hero-background-media" 
-        className="absolute inset-0 z-0 select-none overflow-hidden"
-        style={{
-          maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 82%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 82%, transparent 100%)"
-        }}
+        className="absolute inset-0 z-0 select-none overflow-hidden bg-[#19053a]"
       >
         {/* Subtle dark overlay for readability as requested */}
-        <div className="absolute inset-0 bg-black/45 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-20" />
+
+        {/* Top and Bottom soft fading gradients matching parent theme */}
+        <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#19053a] via-[#19053a]/60 to-transparent z-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#1b0a42] via-[#1b0a42]/60 to-transparent z-20 pointer-events-none" />
         
-        <AnimatePresence initial={false}>
-          <motion.img 
-            key={SLIDE_IMAGES[currentImageIndex]}
-            src={SLIDE_IMAGES[currentImageIndex]}
+        {/* Preloaded and cross-faded slides utilizing transition-opacity for max reliability */}
+        {SLIDE_IMAGES.map((imgUrl, idx) => (
+          <img 
+            key={imgUrl}
+            src={imgUrl}
             alt="Bohol Heritage Scene"
-            initial={{ opacity: 0, scale: 1.08 }}
-            animate={{ opacity: 1, scale: 1.02 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+            style={{ 
+              opacity: idx === currentImageIndex ? 0.65 : 0,
+              transform: idx === currentImageIndex ? "scale(1.02)" : "scale(1.05)",
+              zIndex: idx === currentImageIndex ? 10 : 0,
+              transition: "opacity 1500ms ease-in-out, transform 1500ms ease-in-out"
+            }}
           />
-        </AnimatePresence>
+        ))}
 
         {/* Floating warm green and golden sunbeam layers */}
         <div className="absolute top-1/4 right-[20%] w-96 h-96 rounded-full bg-white/5 blur-[130px] mix-blend-screen" />
